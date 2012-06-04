@@ -1,22 +1,16 @@
-potential architecture for browser testing at WMF
+# Welcome
 
-## prerequisites ##
+Welcome to the Wikimedia Foundation custom page object demo.
 
-* RubyGems version >= 1.3.6
+This is a suite of automated tests written in Cucumber that run on [the Wikimedia beta deployment cluster](http://deployment.wikimedia.beta.wmflabs.org/wiki/Main_Page).
 
-    gem environment version
-    (sudo) gem update system
+At this stage, the edit features are disabled, as running these will be classed as vandalism which will result in your account being permanently blocked on the beta site (this is being rectified).
 
-* install [Bundle](http://gembundler.com/)
+## Prerequisites
+* install bundler
+* install RVM if you are on Mac OSX or Linux
+* create a beta.yml file in lib/config using the template provided with your wikimedia beta credentials (this will NOT be stored in Git)
 
-    (sudo) gem install bundler
-
-## running ##
-
-    bundle
-    rake
-
-
-at the top directory.  Bundle will ensure you have all of the correct gems and the rake command will run the tests.
-
-
+## Installation
+* bundle #to install bundler
+* rake #to run the cucumber features

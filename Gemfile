@@ -1,7 +1,6 @@
-source "http://rubygems.org"
-
+source :rubygems
 gem 'rake'
 gem 'rspec'
-gem 'page-object'
-gem 'require_all'
-
+gem 'cucumber'
+gem 'uuid'
+gem 'watir-webdriver'

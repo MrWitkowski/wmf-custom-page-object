@@ -1,0 +1,5 @@
+.idea
+results.html
+screenshots/
+lib/config/*.yml
+lib/config/*.yaml
