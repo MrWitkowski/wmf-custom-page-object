@@ -31,4 +31,4 @@ After do |scenario|
   @browser.cookies.clear
 end
 
-#at_exit { browser.close }
+at_exit { browser.close }
