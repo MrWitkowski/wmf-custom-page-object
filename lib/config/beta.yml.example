@@ -1,4 +1,6 @@
+:username: Username
+:password: password
 :wikipedia:
   :url: http://en.wikipedia.beta.wmflabs.org
-  :username: your_username
-  :password: your_password
+:commons:
+  :url: http://commons.wikimedia.beta.wmflabs.org
