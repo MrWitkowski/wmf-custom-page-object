@@ -23,12 +23,16 @@ When /^I visit a random page$/ do
   @article_name = visit(Wikipedia::RandomArticlePage).article_name
 end
 
+When /^I visit my user page$/ do
+  visit Wikipedia::UserPage
+end
+
 When /^I edit the page by adding some arbitrary text$/ do
   on Wikipedia::ViewArticlePage do |page|
     page.edit
   end
   on Wikipedia::EditArticlePage do |page|
-    @content_added = page.append_random_content
+    @content_added = page.append_a_
   end
 end
 
