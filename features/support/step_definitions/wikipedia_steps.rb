@@ -32,7 +32,7 @@ When /^I edit the page by adding some arbitrary text$/ do
     page.edit
   end
   on Wikipedia::EditArticlePage do |page|
-    @content_added = page.append_a_
+    @content_added, @edit_message = page.append_random_content
   end
 end
 
@@ -53,15 +53,15 @@ end
 Then /^the user edit appears in the revision history$/ do
   on Wikipedia::ViewArticlePage do |page|
     page.view_history
-    page.history_content.should include @content_added
-    page.hisotry_content.should include Wikipedia::USERNAME
+    page.history_content.should include @edit_message
+    page.history_content.should include Wikipedia::USERNAME
   end
 end
 
 Then /^the IP address edit appears in the revision history$/ do
   on Wikipedia::ViewArticlePage do |page|
     page.view_history
-    page.history_content.should include @content_added
+    page.history_content.should include @edit_message
     page.history_content.should include @ip_address
   end
 end

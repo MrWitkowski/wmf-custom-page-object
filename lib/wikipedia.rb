@@ -1,5 +1,5 @@
 require 'env_config'
-require 'uuid'
+require 'faker'
 
 module Wikipedia
   SITE = :wikipedia
@@ -9,7 +9,7 @@ module Wikipedia
   PASSWORD = EnvConfig.get :password
 
   def self.random_string
-    UUID.new.generate
+    Faker::Company.bs
   end
 
 end
