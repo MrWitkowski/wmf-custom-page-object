@@ -1,5 +1,5 @@
 require 'env_config'
-require 'faker'
+require 'quoth'
 
 module Wikipedia
   SITE = :wikipedia
@@ -9,7 +9,9 @@ module Wikipedia
   PASSWORD = EnvConfig.get :password
 
   def self.random_string
-    Faker::Company.bs
+    Quoth.get
   end
+
+
 
 end

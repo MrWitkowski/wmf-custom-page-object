@@ -8,7 +8,7 @@ class Wikipedia::EditArticlePage < Wikipedia::BasePage
 
   def append_random_content
     random_string = Wikipedia::random_string
-    edit_summary = "Automated tests against Wikimedia: see my user page for details please (#{random_string})"
+    edit_summary = "Automated tests against Wikimedia: see my user page for details please (#{random_string[0..19]})"
     content_field.send_keys :end, :enter
     content_field.send_keys random_string
     edit_summary_field.set edit_summary
