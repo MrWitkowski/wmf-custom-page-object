@@ -4,7 +4,7 @@ Welcome to the Wikimedia Foundation custom page object demo.
 
 This is a suite of automated tests written in Cucumber that run on [the Wikimedia beta deployment cluster](http://deployment.wikimedia.beta.wmflabs.org/wiki/Main_Page).
 
-At this stage, the edit features are disabled, as running these will be classed as vandalism which will result in your account being permanently blocked on the beta site (this is being rectified).
+The tests only edit the logged in user's user page on Wikipedia to minimise chance of being classified as a vandal.
 
 ## Prerequisites
 * install bundler
@@ -13,4 +13,5 @@ At this stage, the edit features are disabled, as running these will be classed 
 
 ## Installation
 * bundle #to install bundler
-* rake #to run the cucumber features
+* rake #to run the rspec specs
+* rake features to run the cucumber features

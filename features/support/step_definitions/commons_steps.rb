@@ -1,12 +1,9 @@
 Given /^I am logged into Commons$/ do
-  visit Commons::LoginPage do |page|
-    page.login_with Commons::USERNAME, Commons::PASSWORD
-    page.should be_logged_in
-  end
+  Commons.ensure_logged_in
 end
 
 Given /^I am not logged into Commons$/ do
-  visit(Commons::LogoutPage).main_content.should include 'You are now logged out.'
+  Commons.ensure_logged_out
 end
 
 When /^I visit the Upload Wizard$/ do

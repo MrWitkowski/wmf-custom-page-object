@@ -1,4 +1,4 @@
-class Commons::LogoutPage < Wikipedia::BasePage
+class Commons::LogoutPage < Commons::BasePage
 
   page_url "#{Commons::BASE_URL}/w/index.php?title=Special:UserLogout"
   expected_title "Log out - #{Commons::TITLE}"

@@ -1,18 +1,9 @@
 Given /^I am logged into Wikipedia$/ do
-  visit Wikipedia::LoginPage do |page|
-    page.login_with Wikipedia::USERNAME, Wikipedia::PASSWORD
-    page.should be_logged_in
-  end
+  Wikipedia.ensure_logged_in
 end
 
 Given /^I am not logged into Wikipedia$/ do
-  visit(Wikipedia::LogoutPage).main_content.should include 'You are now logged out.'
-end
-
-Given /^I record my IP address$/ do
-  visit IfConfigPage do |page|
-    @ip_address = page.ip_address
-  end
+  Wikipedia.ensure_logged_out
 end
 
 When /^I visit the Wikipedia main page$/ do
@@ -28,12 +19,7 @@ When /^I visit my user page$/ do
 end
 
 When /^I edit the page by adding some arbitrary text$/ do
-  on Wikipedia::ViewArticlePage do |page|
-    page.edit
-  end
-  on Wikipedia::EditArticlePage do |page|
-    @content_added, @edit_message = page.append_random_content
-  end
+  @content_added, @edit_message = Wikipedia.edit_user_page_by_adding_new_content
 end
 
 Then /^I can see I am logged into Wikipedia$/ do
@@ -55,13 +41,5 @@ Then /^the user edit appears in the revision history$/ do
     page.view_history
     page.history_content.should include @edit_message
     page.history_content.should include Wikipedia::USERNAME
-  end
-end
-
-Then /^the IP address edit appears in the revision history$/ do
-  on Wikipedia::ViewArticlePage do |page|
-    page.view_history
-    page.history_content.should include @edit_message
-    page.history_content.should include @ip_address
   end
 end

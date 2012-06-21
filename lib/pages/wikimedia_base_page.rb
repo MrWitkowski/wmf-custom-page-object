@@ -5,6 +5,7 @@ class WikimediaBasePage < GenericBasePage
 
   value(:logged_in_as) { |p| p.logged_in_link.text }
   value(:not_logged_in?) { |p| p.log_in_link.exists? }
+  value(:logged_in?) {|p| p.logged_in_link.exists? }
 
   def self.login_elements
     element(:username_field) { |b| b.text_field(id: 'wpName1') }
