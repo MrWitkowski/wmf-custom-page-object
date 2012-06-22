@@ -5,7 +5,7 @@ module PageHelper
   end
 
   def on page_class, visit=false, &block
-    page = page_class.new $browser, visit
+    page = page_class.new @browser, visit
     block.call page if block
     page
   end

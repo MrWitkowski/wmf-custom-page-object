@@ -6,6 +6,8 @@ module Commons
   extend RSpec::Expectations
   extend RSpec::Matchers
 
+  class << self; attr_accessor :browser end
+
   SITE = :commons
   TITLE = 'Wikimedia Commons'
   BASE_URL = EnvConfig.get SITE, :url

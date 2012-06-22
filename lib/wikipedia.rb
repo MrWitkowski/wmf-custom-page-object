@@ -7,6 +7,8 @@ module Wikipedia
   extend RSpec::Expectations
   extend RSpec::Matchers
 
+  class << self; attr_accessor :browser end
+
   SITE = :wikipedia
   TITLE = 'Wikipedia, the free encyclopedia'
   BASE_URL = EnvConfig.get SITE, :url
